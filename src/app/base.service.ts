@@ -25,14 +25,20 @@ export class BaseService {
 
   addEmployee(body: any) {
     console.log(body)
-    this.http.post(this.empUrl, body)
+    this.http.post(this.empUrl, body).subscribe(
+      (res)=>console.log(res)
+    )
   }
   UpdateEmployee(body: any) {
-    this.http.put(this.empUrl + body.EmployeeId, body)
+    this.http.put(this.empUrl + body.EmployeeId, body).subscribe(
+      (res)=>console.log(res)
+    )
   }
 
   deleteEmployee(body: any) {
-    this.http.delete(this.empUrl + body.EmployeeId)
+    this.http.delete(this.empUrl + body.EmployeeId).subscribe(
+      (res)=>console.log(res)
+    )
   }
 
   getEmployees() {
@@ -47,14 +53,20 @@ export class BaseService {
   }
 
   addDepartment(body: any) {
-    this.http.post(this.depUrl, body)
+    this.http.post(this.depUrl, body).subscribe(
+      (res)=>console.log(res)
+    )
   }
   UpdateDepartment(body: any) {
-    this.http.put(this.depUrl + body.Id, body)
+    this.http.put(this.depUrl + body.Id, body).subscribe(
+      (res)=>console.log(res)
+    )
   }
 
   deleteDepartment(body: any) {
-    this.http.delete(this.depUrl + body.Id)
+    this.http.delete(this.depUrl + body.Id).subscribe(
+      (res)=>console.log(res)
+    )
   }
 
   getDepartments() {
