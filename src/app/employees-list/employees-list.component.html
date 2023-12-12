@@ -12,10 +12,12 @@
       <div class="col">Actions</div>
     </div>
     <div class="row my-2">
-     <div class="col" *ngFor="let column of columns">
-       <input [(ngModel)]="newEmployee[column]" [type]="column.type">
-     </div>
-     <div class="col">
+     
+       <input class="col-3" [(ngModel)]="newEmployee.employeeId" type="text">
+       <input class="col-3" [(ngModel)]="newEmployee.employeeName" type="text">
+       <input class="col-3" [(ngModel)]="newEmployee.departmentId" type="number">
+     
+     <div class="col-2">
        <button (click)="addEmployee()" type="button" class="btn btn-success">Hire</button>
      </div>
    </div>
@@ -32,9 +34,6 @@
             <select name="departments" id="depId"  [(ngModel)]="emp.department.id">
                 <option *ngFor="let dep of depList" [value]="dep.id">{{dep.name}}</option>
             </select>
-          </div>
-          <div class="case" *ngSwitchDefault>
-            <input [type]="column.type" [(ngModel)]="emp[column.key]">
           </div>
         </ng-container>
       </div>

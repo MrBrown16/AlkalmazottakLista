@@ -24,6 +24,7 @@ export class BaseService {
   }
 
   addEmployee(body: any) {
+    console.log(body)
     this.http.post(this.empUrl, body)
   }
   UpdateEmployee(body: any) {

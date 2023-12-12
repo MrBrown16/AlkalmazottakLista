@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseService } from '../base.service';
+import { Employee } from '../employee';
 
 @Component({
   selector: 'app-employees-list',
@@ -8,13 +9,13 @@ import { BaseService } from '../base.service';
 })
 export class EmployeesListComponent {
 
-  newEmployee:any={}
+  newEmployee= new Employee();
   empList:any
   depList:any
   columns:any=[
     {key:"employeeId", id:1, text:"Id", type:"plain"},
     {key:"employeeName", id:2, text:"Name", type:"text"},
-    {key:"departmentId", id:3, text:"Department", type:"selection"},
+    {key:"departmentid", id:3, text:"Department", type:"selection"},
   ]
 
   constructor(private base:BaseService){
@@ -27,6 +28,7 @@ export class EmployeesListComponent {
   }
 
   addEmployee(){
+    console.log(this.newEmployee)
     this.base.addEmployee(this.newEmployee)
   }
 
